@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPRINT 2</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Space+Grotesk:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" href="./imagenes/favicon-32x32.png" type="">
+</head>
+
+<body>
+    <div class="main">
+        <div class="margen"> </div>
+        <div class="formulario" id="divVisible">
+
+            <form class="form"  id="formDatos">
+                <label class="formulario__label" for="cardName">CARDHOLDER NAME</label>
+                <input class="formulario__input" type="text" id="cardName" placeholder="e.g. Jane Apples">
+                <p id="alertaCardName" class="alertas"></p>
+
+                <label class="formulario__label" for="cardNumber">CARD NUMBER</label>
+                <input class="formulario__input" type="text" inputmode="numeric" minlength="16" maxlength="16"
+                    id="cardNumber" placeholder="e.g. 1234 4567 8910 1112">
+                    <p id="alertaCardNumber" class="alertas"></p>
+
+                <div class="flex-container">
+                    <div class="flex-containerIzq">
+                        <label class="formulario__label" for="expDate">EXP. DATE (MM/YY)</label>
+                        <div class="flex-containerMM-YY">
+                            <input class="formulario__input" type="text" maxlength="2" id="mm" placeholder="MM"> 
+                            <input class="formulario__input" type="text" id="yy" maxlength="2" placeholder="YY">
+                        </div>
+                            <p id="alertaMm" class="alertas"></p>
+                            <p id="alertaYy" class="alertas"></p>
+                    </div>
+                
+                    <div class="flex-containerDer">
+                        <label class="formulario__label" for="cvcCode">CVC</label>
+                        <input class="formulario__input" type="password" minlength="3" maxlength="3" id="cvcCode"
+                            placeholder="CVC" />
+                        <p id="alertaCvc" class="alertas"></p>
+
+                    </div>
+                </div>
+                <button type="button" id="botonConfirm" class="formulario__btn">Confirm</button>
+            </form>
+        </div>
+        <div class="thankYou" id="divOculto">
+            <div class="contenedorThanks">
+            <img src="./imagenes/icon-complete.svg" alt="">
+            <h2 class="thankYouTitle">Thank you!</h2>
+            <p class="thankYouSubtitle">We've added your card details</p>
+            <button type="button" class="formulario__btn" id="botonReiniciar">Continue</button>
+        </div>
+        </div>
+    </div>
+
+    <div class="tarjetas">
+        <div class="frontCard">
+            <img class="card-logo" src="./imagenes/card-logo.svg" alt="">
+            <img src="./imagenes/bg-card-front.png" alt="imagen del frente de la tarjeta">
+
+            <div class="cardInfo">
+                <p class="cardholder-name"><span id="reflectedName">JANE APPLES</span></p>
+                <p class="card-number"><span id="reflectedNumber">0000 0000 0000 0000</span></p>
+                <p class="exp-dateMm"><span id="reflectedDateMm">12</span></p>
+                <p class="dateBar">/</p>
+                <p class="exp-dateYy"><span id="reflectedDateYy">24</span></p>
+            </div>
+        </div>
+
+        <div class="backCard">
+            <img src="./imagenes/bg-card-back.png" alt="foto del reves de la tarjeta">
+            <p class="cvcCode"><span id="reflectedCvc">000</span></p>
+        </div>
+    </div>
+
+    <script src="main.js">
+    </script>
+
+</body>
+
+</html>
